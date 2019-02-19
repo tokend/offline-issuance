@@ -1,0 +1,44 @@
+// CAUTION: do not use these colors externally
+
+$black: #3f4244;
+$gray:#e2e3e3;
+$green: #3fa595;
+$red: #c2243b;
+$blue: #578ebd;
+$orange: #ffaf03;
+$white: #ffffff;
+
+// Use these ones instead
+
+$col-hover: $black;
+
+$col-primary: $black;
+$col-background: lighten($gray, 5%);
+
+$col-text: $black;
+$col-text-secondary: rgba($color: $black, $alpha: 0.5);
+
+$col-content-block: $white;
+
+$col-btn-text: $white;
+$col-msg-text: $white;
+
+$col-success: $green;
+$col-danger: $red;
+$col-info: $blue;
+
+$col-nav-text: $white;
+
+$col-active: $orange;
+$col-inactive: lighten($orange, 35%);
+$col-unfocused: lighten($black, 30%);
+
+// New:
+
+$col-md-primary: #0066cc;
+$col-md-background: #e8e8e8;
+$col-md-accent: #ef5350;
+$col-md-primary-txt: #fff;
+$col-md-unfocused: rgba(0, 0, 0, 0.54);
+$col-md-block: #fff;
+$col-md-pending: $orange;

@@ -1,0 +1,48 @@
+// @import './bootstrap';
+@import './_colors';
+@import './typography.scss';
+@import '~vue-material/dist/theme/engine';
+@import './fonts';
+
+@include md-register-theme("default", (
+        primary: $col-md-primary,
+        accent: $col-md-accent,
+        theme: light
+));
+
+@import '~vue-material/dist/theme/all';
+
+html, body, #app {
+  height: 100%;
+  margin: 0;
+  background-color: #fff;
+}
+
+.app__form {
+  max-width: 32rem;
+  margin: auto;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.app__back-btn {
+  margin-right: 2.5rem;
+  position: relative;
+}
+
+.app__icon-back {
+  font-size: 16px;
+}
+
+.app__form-row {
+  margin-bottom: .75rem;
+}
+
+.app__form-content {
+  padding: 0 .5rem;
+  margin-bottom: 1rem;
+}

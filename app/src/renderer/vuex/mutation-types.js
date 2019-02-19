@@ -1,0 +1,4 @@
+export const AUTHORIZE = 'AUTHORIZE'
+export const UNAUTHORIZE = 'UNAUTHORIZE'
+export const SET_KEYPAIR = 'SET_KEYPAIR'
+export const CLEAR_KEYPAIR = 'CLEAR_KEYPAIR'

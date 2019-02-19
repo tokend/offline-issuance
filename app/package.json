@@ -1,0 +1,18 @@
+{
+  "name": "tokend-offline-pre-issuance-app-renderer",
+  "version": "0.1.0",
+  "description": "TokenD offline issuance tool based on electron-vue",
+  "main": "./dist/main.js",
+  "dependencies": {
+    "clipboard": "2.0.4",
+    "material-design-icons": "3.0.1",
+    "vue": "2.6.6",
+    "vue-electron": "1.0.6",
+    "vue-material": "1.0.0-beta-10.2",
+    "vue-resource": "1.5.1",
+    "vue-router": "2.8.1",
+    "vuex": "2.5.0"
+  },
+  "devDependencies": {},
+  "author": "Distributed Lab <dev@distributedlab.com>"
+}

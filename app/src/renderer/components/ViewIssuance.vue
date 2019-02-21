@@ -23,19 +23,19 @@
 <script>
   import FileStorage from '../fileStorage'
   import Issuances from './ViewIssuance/Issuances'
-  import StellarBase from 'exports-loader?StellarBase!../../../../node_modules/js-base/dist/stellar-base.js'
+  import { base } from '@tokend/js-sdk'
 
   export default {
     components: {
       Issuances
     },
     methods: {
-      open (event) {
+      open () {
         FileStorage.openIssuances((result, fileName) => {
           this.items = []
           for (var i = 0; i < result.length; i++) {
-            var preEmission = StellarBase.xdr.PreIssuanceRequest.fromXDR(result[i].preEmission, 'hex')
-            var item = StellarBase.PreIssuanceRequest.dataFromXdr(preEmission)
+            var preEmission = base.xdr.PreIssuanceRequest.fromXDR(result[i].preEmission, 'hex')
+            var item = base.PreIssuanceRequest.dataFromXdr(preEmission)
             item.used = result[i].used
             item.xdr = preEmission
             this.items.push(item)

@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import StellarBase from 'exports-loader?StellarBase!../../../../node_modules/js-base/dist/stellar-base.js'
+  import { base } from '@tokend/js-sdk'
   import FileStorage from '../fileStorage'
   import $ from 'jquery'
   import ClipboardField from './common/ClipboardField'
@@ -45,7 +45,7 @@
     },
     methods: {
       generate () {
-        var keyPair = StellarBase.Keypair.random()
+        var keyPair = base.Keypair.random()
         this.publicKey = keyPair.accountId()
         this.privateKey = keyPair.seed()
         setTimeout(() => {

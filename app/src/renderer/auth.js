@@ -1,5 +1,6 @@
-import StellarBase from 'exports-loader?StellarBase!../../../node_modules/js-base/dist/stellar-base.js'
 import sjcl from '../../../node_modules/stellar-wallet-js-sdk/lib/util/sjcl'
+import { base } from '@tokend/js-sdk'
+
 export default {
   install (Vue, options) {
     Vue.auth = this
@@ -7,7 +8,7 @@ export default {
   login (encryptedData, password, store) {
     try {
       var data = sjcl.decrypt(password, encryptedData)
-      var keyPair = StellarBase.Keypair.fromSeed(data)
+      var keyPair = base.Keypair.fromSecret(data)
     } catch (e) {
       alert('Invalid keyFile or password')
       return false
@@ -18,7 +19,7 @@ export default {
   },
   loginWithSeed (seed, store) {
     try {
-      var keyPair = StellarBase.Keypair.fromSeed(seed)
+      var keyPair = base.Keypair.fromSeed(seed)
     } catch (e) {
       alert('Invalid seed')
       return false

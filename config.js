@@ -8,8 +8,8 @@ let config = {
   name: 'TokenD pre-issuance tool',
 
   // Use ESLint (extends `standard`)
-  // Further changes can be made in `.eslintrc.js`
-  eslint: true,
+  // Further changes can be made in `..eslintrc`
+  eslint: false,
 
   // webpack-dev-server port
   port: 9080,

@@ -2,7 +2,8 @@ import sjcl from '../../../node_modules/stellar-wallet-js-sdk/lib/util/sjcl'
 import fs from 'fs'
 import uuidV4 from 'uuid'
 import randomstring from 'randomstring'
-import StellarBase from 'exports-loader?StellarBase!../../../node_modules/js-base/dist/stellar-base.js'
+import { base } from '@tokend/js-sdk'
+
 var keyExtension = 'key'
 var issuancesExtension = 'iss'
 var txExtention = 'tx'
@@ -75,7 +76,7 @@ export default {
       issuances: []
     }
     for (var i = 0; i < issuances.length; i++) {
-      var preEmission = StellarBase.PreIssuanceRequest.xdrFromData(issuances[i])
+      var preEmission = base.PreIssuanceRequest.xdrFromData(issuances[i])
       data.issuances.push({
         preEmission: preEmission.toXDR('hex'),
         used: issuances[i].used
@@ -103,11 +104,10 @@ export default {
           reference: randomstring.generate(randNum(4, 64)),
           amount: amount.toString(),
           asset,
-          keyPair: keyPair
+          keyPair: keyPair,
+          creatorDetails: {}
         }
-        console.log(keyPair.seed())
-        console.log(keyPair.accountId())
-        var preEmission = StellarBase.PreIssuanceRequest.build(opts)
+        var preEmission = base.PreIssuanceRequest.build(opts)
         data.issuances.push({
           preEmission: preEmission.toXDR('hex'),
           used: false
@@ -130,15 +130,17 @@ export default {
         return
       }
 
-      const operation = StellarBase.ManageAssetBuilder
-        .changeAssetPreIssuer({
-          accountID: opts.accountId,
-          code: opts.asset,
-          source: opts.source
-        })
+      const operation = base
+          .ManageAssetBuilder
+          .changeAssetPreIssuer({
+            accountID: opts.accountId,
+            code: opts.asset,
+            source: opts.source,
+            keyPair: opts.keypair
+          })
 
-      StellarBase.Network.use(new StellarBase.Network(opts.passphrase))
-      const transaction = new StellarBase.TransactionBuilder(new StellarBase.Account(opts.source))
+      base.Network.use(new base.Network(opts.passphrase))
+      const transaction = new base.TransactionBuilder(opts.source)
         .addOperation(operation)
         .build()
 

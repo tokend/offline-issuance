@@ -39,7 +39,7 @@
 </template>
 
 <script>
-  import StellarBase from 'exports-loader?StellarBase!../../../../node_modules/js-base/dist/stellar-base.js'
+  import { base } from '@tokend/js-sdk'
   import FileStorage from '../fileStorage'
 
   export default {
@@ -56,7 +56,7 @@
     },
     methods: {
       save () {
-        if (!StellarBase.Keypair.isValidPublicKey(this.form.accountId)) {
+        if (!base.Keypair.isValidPublicKey(this.form.accountId)) {
           alert('Invalid account id!')
           return
         }

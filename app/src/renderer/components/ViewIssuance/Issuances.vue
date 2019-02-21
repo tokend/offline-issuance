@@ -31,8 +31,9 @@
 </template>
 
 <script>
-import StellarBase from 'exports-loader?StellarBase!../../../../../node_modules/js-base/dist/stellar-base.js'
+import { base } from '@tokend/js-sdk'
 import localize from '../../localize'
+
 export default {
   props: ['items', 'update'],
   data: function () {
@@ -43,11 +44,11 @@ export default {
   },
   methods: {
     isMySig (item) {
-      return StellarBase.PreIssuanceRequest.isXdrPreIssuanceRequestSigned(item.xdr, this.$store.getters.keyPair)
+      return base.PreIssuanceRequest.isXdrPreIssuanceRequestSigned(item.xdr, this.$store.getters.keyPair)
     },
     addSignature (index) {
       var item = this.items[index]
-      StellarBase.PreIssuanceRequest.addSignature(item, this.$store.getters.keyPair)
+      base.PreIssuanceRequest.addSignature(item, this.$store.getters.keyPair)
       this.items.splice(index, 1, item)
       this.$parent.update(this.items)
     }

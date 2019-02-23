@@ -144,8 +144,6 @@ export default {
         .addOperation(operation)
         .build()
 
-      transaction.sign(opts.keypair)
-
       const data = {
         asset: opts.asset,
         source: opts.source,

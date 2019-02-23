@@ -67,7 +67,7 @@
     "webpack-merge": "2.6.1"
   },
   "dependencies": {
-    "@babel/runtime-corejs2": "^7.3.1",
+    "@babel/runtime-corejs2": "7.3.1",
     "bootstrap-sass": "3.3.7",
     "electron-winstaller": "2.6.4",
     "exports-loader": "0.6.4",

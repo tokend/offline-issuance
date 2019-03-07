@@ -49,7 +49,7 @@ function createWindow () {
     }
   })
 
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
   mainWindow.loadURL(winURL)
 
@@ -59,7 +59,7 @@ function createWindow () {
 
   // eslint-disable-next-line no-console
   console.log('mainWindow opened')
-  
+
 }
 
 app.on('ready', createWindow)

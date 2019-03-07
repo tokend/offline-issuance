@@ -9,8 +9,7 @@ Install dependencies (twice - electron deps and application deps):
 
 ```bash
 yarn install
-cd ./app
-yarn install
+(cd ./app && yarn install)
 ```
 
 Serve with hot reload at localhost:9000:

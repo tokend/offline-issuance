@@ -49,7 +49,7 @@ function createWindow () {
     }
   })
 
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
   Menu.setApplicationMenu(Menu.buildFromTemplate(template));
   mainWindow.loadURL(winURL)
 

@@ -75,6 +75,7 @@
     "font-awesome": "4.7.0",
     "jquery": "3.4.1",
     "node-sass": "4.12.0",
-    "randomstring": "1.1.5"
+    "randomstring": "1.1.5",
+    "sjcl": "^1.0.8"
   }
 }

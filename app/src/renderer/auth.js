@@ -1,5 +1,5 @@
-import sjcl from '../../../node_modules/stellar-wallet-js-sdk/lib/util/sjcl'
 import { base } from '@tokend/js-sdk'
+import sjcl from '../../../node_modules/sjcl'
 
 export default {
   install (Vue, options) {

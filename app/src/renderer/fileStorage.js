@@ -21,7 +21,6 @@ export default {
         return
       }
       var data = sjcl.encrypt(password, privateKey)
-      // var data = crypto.encryptData(password, privateKey)
       fs.writeFile(fileName + '.' + keyExtension, data, function (err) {
         if (err) {
           alert('An error occurred creating the file ' + err.message)

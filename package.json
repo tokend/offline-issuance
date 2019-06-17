@@ -1,6 +1,6 @@
 {
   "name": "offline-issuance",
-  "version": "0.1.0",
+  "version": "1.3.2-rc.0",
   "description": "TokenD offline issuance tool based on electron-vue",
   "scripts": {
     "build": "node tasks/release.js",

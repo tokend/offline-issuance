@@ -9,6 +9,7 @@ const webpack = require('webpack')
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 let rendererConfig = {
   devtool: '#eval-source-map',
@@ -21,8 +22,8 @@ let rendererConfig = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: 'css-loader'
+          fallback: 'style-loader',
+          use: 'css-loader'
         })
       },
       {
@@ -93,7 +94,8 @@ let rendererConfig = {
       jQuery: 'jquery',
       '_': 'lodash',
       'utils': 'utils'
-    })
+    }),
+    new VueLoaderPlugin()
   ],
   output: {
     filename: '[name].js',

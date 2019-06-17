@@ -1,13 +1,11 @@
-import sjcl from '../../../node_modules/stellar-wallet-js-sdk/lib/util/sjcl'
 import fs from 'fs'
-import uuidV4 from 'uuid'
 import randomstring from 'randomstring'
 import { base } from '@tokend/js-sdk'
+import sjcl from '../../../node_modules/sjcl'
 
 var keyExtension = 'key'
 var issuancesExtension = 'iss'
 var txExtention = 'tx'
-var fs_test = fs
 
 function randNum (min, max) {
   return Math.round(Math.random() * (max - min) + min)

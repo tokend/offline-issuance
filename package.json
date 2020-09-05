@@ -55,7 +55,7 @@
     "sass-loader": "7.1.0",
     "spectron": "3.8.0",
     "style-loader": "0.13.2",
-    "tree-kill": "1.2.0",
+    "tree-kill": "1.2.2",
     "url-loader": "2.0.0",
     "vue-hot-reload-api": "2.3.0",
     "vue-html-loader": "1.2.4",
